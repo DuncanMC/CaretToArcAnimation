@@ -33,6 +33,9 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func toggleShowBezierPoints(_ sender: UISwitch) {
+        caretToArcView.showBezierPathIllustration = sender.isOn
+    }
     @IBAction func handleRotateSwitch(_ sender: UISwitch) {
         toggleButton.isEnabled = !sender.isOn
         caretToArcView.rotate(sender.isOn)
