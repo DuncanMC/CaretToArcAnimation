@@ -15,6 +15,7 @@
 		AE7E65BE262E441D0065BC31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7E65BC262E441D0065BC31 /* LaunchScreen.storyboard */; };
 		AE7E65C9262E441D0065BC31 /* CaretToArcAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E65C8262E441D0065BC31 /* CaretToArcAnimationTests.swift */; };
 		AE7E65D4262E441D0065BC31 /* CaretToArcAnimationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E65D3262E441D0065BC31 /* CaretToArcAnimationUITests.swift */; };
+		AE7E65E5262E44AB0065BC31 /* CaretToArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E65E4262E44AB0065BC31 /* CaretToArcView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AE7E65CF262E441D0065BC31 /* CaretToArcAnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaretToArcAnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7E65D3262E441D0065BC31 /* CaretToArcAnimationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaretToArcAnimationUITests.swift; sourceTree = "<group>"; };
 		AE7E65D5262E441D0065BC31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE7E65E4262E44AB0065BC31 /* CaretToArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaretToArcView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				AE7E65B7262E441A0065BC31 /* Main.storyboard */,
 				AE7E65BA262E441D0065BC31 /* Assets.xcassets */,
 				AE7E65BC262E441D0065BC31 /* LaunchScreen.storyboard */,
+				AE7E65E4262E44AB0065BC31 /* CaretToArcView.swift */,
 				AE7E65BF262E441D0065BC31 /* Info.plist */,
 			);
 			path = CaretToArcAnimation;
@@ -260,6 +263,7 @@
 			files = (
 				AE7E65B6262E441A0065BC31 /* ViewController.swift in Sources */,
 				AE7E65B2262E441A0065BC31 /* AppDelegate.swift in Sources */,
+				AE7E65E5262E44AB0065BC31 /* CaretToArcView.swift in Sources */,
 				AE7E65B4262E441A0065BC31 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
