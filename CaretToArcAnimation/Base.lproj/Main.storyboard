@@ -43,15 +43,43 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" id="VVX-IC-Wf3">
+                                <rect key="frame" x="58" y="725" width="300" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GMx-nf-jkQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="toggleShowBezierPoints:" destination="BYZ-38-t0r" eventType="valueChanged" id="DLo-2Y-MKb"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Bezier Control points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHn-Fq-1P4">
+                                        <rect key="frame" x="69" y="5" width="231" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="Vx7-uG-40S"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="YHn-Fq-1P4" secondAttribute="trailing" id="0pH-ZQ-D3t"/>
+                                    <constraint firstItem="GMx-nf-jkQ" firstAttribute="top" secondItem="VVX-IC-Wf3" secondAttribute="top" id="Mk7-Xz-BUl"/>
+                                    <constraint firstAttribute="bottom" secondItem="GMx-nf-jkQ" secondAttribute="bottom" id="Nyv-ac-Gau"/>
+                                    <constraint firstItem="GMx-nf-jkQ" firstAttribute="leading" secondItem="VVX-IC-Wf3" secondAttribute="leading" id="Pgp-tn-nXU"/>
+                                    <constraint firstItem="YHn-Fq-1P4" firstAttribute="leading" secondItem="GMx-nf-jkQ" secondAttribute="trailing" constant="20" id="fbV-dp-dGM"/>
+                                    <constraint firstItem="YHn-Fq-1P4" firstAttribute="centerY" secondItem="GMx-nf-jkQ" secondAttribute="centerY" id="j3S-RI-2fN"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68A-WI-Ppn">
-                                <rect key="frame" x="183.5" y="832" width="47" height="30"/>
+                                <rect key="frame" x="183.5" y="827" width="47" height="35"/>
                                 <state key="normal" title="Toggle"/>
                                 <connections>
                                     <action selector="handleToggleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1SC-TN-ybB"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMh-0L-NDQ">
-                                <rect key="frame" x="147.5" y="781" width="119" height="31"/>
+                                <rect key="frame" x="147.5" y="776" width="119" height="31"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="F42-EO-gcW">
                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
@@ -81,6 +109,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="tMh-0L-NDQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="19s-FF-VXI"/>
+                            <constraint firstItem="tMh-0L-NDQ" firstAttribute="top" secondItem="VVX-IC-Wf3" secondAttribute="bottom" constant="20" id="AJY-dJ-m2S"/>
                             <constraint firstItem="68A-WI-Ppn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HuN-wB-kLN"/>
                             <constraint firstItem="68A-WI-Ppn" firstAttribute="top" secondItem="tMh-0L-NDQ" secondAttribute="bottom" constant="20" id="Sbp-N5-fUl"/>
                             <constraint firstItem="tMh-0L-NDQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YEz-97-gLk"/>
