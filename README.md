@@ -12,6 +12,12 @@ To animate from the caret to the arc, it creates the caret as 2 cubic bezier cur
 
 The arc is also composed of 2 cubic bezier curves, drawn in the same direction as those in the caret symbol. However, the control points for the arc's Bezier curves are chosen so that the resulting curve closely approximates an arc of 3π/2 radians, or 270 degrees, or 3/4 of a cicrcle. The arc is slightly larger than the caret it replaces, and faces the same way.
 
+It's easier to understand if you add a visual representation of the Bezier control points, like this:
+
+![](CaretToArcAnimationWithControlPoints.gif)
+
+The red dots that land on the caret/curve are the endpoints of the 2 Bezier curves. The red dots that are on the outside of the arc are the control points that define the shape of the curves. For the caret shape, the control points are on the lines, which causes the Bezier curve to take a straight line shape.
+
 I used [**this article**](https://pomax.github.io/bezierinfo/#circles_cubic) to get the control points for the two Bezier curves. I didn't feel like figuring out the math, so I just set the curve on that page's interactive arc renderer to draw 3/8 of a circle, wrote down the coordinates of all the control points, and then flipped them to get the second Bezier curve.
 
 Here is a screenshot from the Bezier Arc approximator web simulation I used to find the Bezier control points:
