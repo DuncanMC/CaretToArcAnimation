@@ -18,7 +18,7 @@ Here is a screenshot from the Bezier Arc approximator web simulation I used to f
 
 ![](BezierArcApproximationScreenshot.png)
 
-(In that screenshot, the angle slider is expressed in radians. One half of a 3/4 circle arc is 3/8 of a full circle, or 3/8 of 2π. 2π * 3/8 is about 2.36, so that is the arc angle I chose.
+(In that screenshot, the angle slider is expressed in radians. One half of a 3/4 circle arc is 3/8 of a full circle, or 3/8 of 2π. 2π * 3/8 is about 2.36, so that is the arc angle I chose.)
 
 The CaretToArcAnimation app defines a `CaretToArcView` class which is a subclass of `UIView`.
 
