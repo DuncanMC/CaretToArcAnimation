@@ -2,25 +2,42 @@
 //  ViewController.swift
 //  CaretToArcAnimation
 //
-//  Created by Duncan Champney on 4/19/21.
+//  Copyright 2021 Duncan Champney
+//  Licensed under the MIT source license
 //
 
 import UIKit
 
 class ViewController: UIViewController {
 
+    let animationDuration = 0.5
+    @IBOutlet weak var toggleButton: UIButton!
+    @IBOutlet weak var rotateSwitch: UISwitch!
     var viewState: ViewState = .none
 
     @IBOutlet weak var caretToArcView: CaretToArcView!
     override func viewDidLoad() {
         super.viewDidLoad()
         caretToArcView.viewState = .caret
+        caretToArcView.animationDuration = animationDuration
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func handleAnimateButton(_ sender: Any) {
+    @IBAction func handleToggleButton(_ sender: UIButton) {
+        toggleButton.isEnabled = false
+        rotateSwitch.isEnabled = false
         caretToArcView.viewState = caretToArcView.viewState == .caret ? .arc : .caret
+        DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration) {
+            self.toggleButton.isEnabled = true
+            self.rotateSwitch.isEnabled = true
+        }
+    }
+
+    @IBAction func handleRotateSwitch(_ sender: UISwitch) {
+        toggleButton.isEnabled = !sender.isOn
+        caretToArcView.rotate(sender.isOn)
     }
 
 }
+
 
