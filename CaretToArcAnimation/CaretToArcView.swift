@@ -68,7 +68,7 @@ class CaretToArcView: UIView {
             let caretBezier2PointC = CGPoint(x: caretEnd.x + abs(caretEnd.x - caretMiddle.x)*2/3,
                                              y: caretEnd.y + abs(caretEnd.y - caretMiddle.y)*2/3)
 
-            path.move(to: CGPoint(x: 200, y: 280))
+            path.move(to: caretStart)
             path.addCurve(to: caretMiddle, controlPoint1: caretBezier1PointB, controlPoint2: caretBezier1PointC)
             path.addCurve(to: caretEnd, controlPoint1: caretBezier2PointB, controlPoint2: caretBezier2PointC)
 

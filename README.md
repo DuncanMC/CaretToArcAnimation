@@ -8,7 +8,7 @@ It works by animating the path installed into a CAShapeLayer.
 
 In order for a path animation to work correctly, the starting and ending paths need to have the same number and type of control points.
 
-To animate from the caret to the arc, it creates the caret as 2 cubic bezier curves. The first curve starts at the lower left of the caret, passes through points 1/3 and 2/3 of the way along the lower line segment, and ends at the "bend" in the caret. That creates a Bezier curve that renders as a line segment. The second curve is also a straight line Bezier curve. This one starts at the bend in the caret and ends at the top left corner.
+To animate from the caret to the arc, it creates the caret as 2 cubic bezier curves. The first "curve" (Which is actually a straight line) starts at the lower left of the caret, passes through points 1/3 and 2/3 of the way along the lower line segment, and ends at the "bend" in the caret. That creates a Bezier curve that renders as a line segment. The second curve is also a straight line Bezier curve. The second one starts at the bend in the caret and ends at the top left corner.
 
 The arc is also composed of 2 cubic bezier curves, drawn in the same direction as those in the caret symbol. However, the control points for the arc's Bezier curves are chosen so that the resulting curve closely approximates an arc of 3π/2 radians, or 270 degrees, or 3/4 of a cicrcle. The arc is slightly larger than the caret it replaces, and faces the same way.
 
@@ -22,7 +22,7 @@ Here is a screenshot from the Bezier Arc approximator web simulation I used to f
 
 The CaretToArcAnimation app defines a `CaretToArcView` class which is a subclass of `UIView`.
 
-Most of the interesting work is don in the `CaretToArcView` class.
+Most of the interesting work is done in the `CaretToArcView` class.
 
 It has a static var `layerClass` which returns `CAShapeLayer.self`. This causes the view's backing layer to be set up as a CAShapeLayer.
 
