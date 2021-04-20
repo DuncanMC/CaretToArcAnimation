@@ -28,6 +28,7 @@ class CaretToArcView: UIView {
     class override var layerClass: AnyClass {
         return CAShapeLayer.self
     }
+
     public func rotate(_ doRotate: Bool) {
         if !doRotate {
             layer.removeAllAnimations()
