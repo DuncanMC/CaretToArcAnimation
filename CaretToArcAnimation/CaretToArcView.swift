@@ -185,14 +185,25 @@ class CaretToArcView: UIView {
                 pathAnimation.fromValue = layer.path
                 pathAnimation.toValue = path.cgPath
 
-                let bezierPathAnimation = CABasicAnimation(keyPath: "path")
+                // This animation does not work when added to an animation group applied to the parent layer of the bezierIllustrationLayer
+                let bezierPathAnimation = CABasicAnimation(keyPath: "sublayers.bezierillustrationlayer.path")
                 bezierPathAnimation.duration = animationDuration
                 bezierPathAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
                 bezierPathAnimation.fromValue = bezierIllustrationLayer.path
                 bezierPathAnimation.toValue = illustrationPath.cgPath
 
-                layer.add(pathAnimation, forKey: nil)
-                bezierIllustrationLayer.add(bezierPathAnimation, forKey: nil)
+//                If I add this rotation animation to the animation group, it works
+//                let rotationAnimation = CABasicAnimation(keyPath: "sublayers.bezierillustrationlayer.transform.rotation.z")
+//                rotationAnimation.duration = 1.0
+//                rotationAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+//                rotationAnimation.fromValue = 0
+//                rotationAnimation.toValue  = CGFloat.pi * 2
+
+                let animationGroup = CAAnimationGroup()
+                animationGroup.duration = animationDuration
+                animationGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+                animationGroup.animations = [pathAnimation, bezierPathAnimation]
+                layer.add(animationGroup, forKey: nil)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     layer.path = path.cgPath
                     self.bezierIllustrationLayer.path = illustrationPath.cgPath
@@ -207,7 +218,7 @@ class CaretToArcView: UIView {
         layer.strokeColor = UIColor.black.cgColor
         layer.lineWidth = 5
         layer.path = nil
-        bezierIllustrationLayer.name = "bezierIllustrationLayer"
+        bezierIllustrationLayer.name = "bezierillustrationlayer"
         bezierIllustrationLayer.strokeColor = UIColor(red: 192, green: 0, blue: 0, alpha: 0.4).cgColor
         bezierIllustrationLayer.fillColor = UIColor.clear.cgColor
         bezierIllustrationLayer.lineWidth = 2
